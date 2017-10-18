@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "+++\n# Recent Posts widget.\n# This widget displays recent posts from `content/post/`.\n\ndate = \"2016-04-20T00:00:00\"\ndraft = false\n\ntitle = \"Recent Posts\"\nsubtitle = \"\"\nwidget = \"posts\"\n\n# Order that this section will appear in.\nweight = 40\n\n# Filter posts by tag.\n#  By default, show all recent posts.\n#  Filtering example: `tags_include = [\"hugo\", \"academic\"]`\ntags_include = []\ntags_exclude = []\n\n# Number of posts to list.\ncount = 5\n\n+++\n\n",
+    "created" : 1508350409345.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1848634883",
+    "id" : "B5176FF6",
+    "lastKnownWriteTime" : 1508251905,
+    "last_content_update" : 1508350453567,
+    "path" : "C:/Users/haotm/Desktop/Ming_blog/content/home/posts.md",
+    "project_path" : "content/home/posts.md",
+    "properties" : {
+    },
+    "relative_order" : 10,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "markdown"
+}

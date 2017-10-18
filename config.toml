@@ -1,4 +1,4 @@
-baseurl = "/"  # End your URL with a `/` trailing slash, e.g. `https://example.com/`.
+baseurl = "https://ming.netlify.com/"  # End your URL with a `/` trailing slash, e.g. `https://example.com/`.
 title = "Ming-Blog"
 copyright = "&copy; 2017 Your Name"
 theme = "hugo-academic"
@@ -174,23 +174,22 @@ defaultContentLanguageInSubdir = false
 #     desired widget in your `content/home/` folder.
 #   The weight parameter defines the order that the links will appear in.
 
-
+[[menu.main]]
+  name = "Home"
+  url = "#about"
+  weight = 1
 
 [[menu.main]]
   name = "Posts"
   url = "#posts"
-  weight = 1
+  weight = 2
   identifier = "something"
 
 [[menu.main]]
   name = "Projects"
   url = "#projects"
-  weight = 2
-
-[[menu.main]]
-  name = "Home"
-  url = "#about"
   weight = 3
+
   
 [[menu.main]]
   name = "Contact"

@@ -34,3 +34,5 @@ weight = 5
 # Biography
 
 Ming Hao
+
+Experienced in working both as a clinical physicist in diagnostic setting and as an application specialist for oncology products which include Elekta Linacs and Tomotherapy.
