@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "+++\n# Date this page was created.\ndate = \"2016-04-27\"\n\n# Project title.\ntitle = \"Linux from scratch\"\n\n# Project summary to display on homepage.\nsummary = \"Documenting and going through guides on LFS (Linux from scratch)\"\n\n# Optional image to display on homepage (relative to `static/img/` folder).\nimage_preview = \"bubbles.jpg\"\n\n# Tags: can be used for filtering projects.\n# Example: `tags = [\"machine-learning\", \"deep-learning\"]`\ntags = [\"current\"]\n\n# Optional external URL for project (replaces project detail page).\nexternal_link = \"\"\n\n# Does the project detail page use math formatting?\nmath = false\n\n# Optional featured image (relative to `static/img/` folder).\n[header]\nimage = \"headers/bubbles-wide.jpg\"\ncaption = \"My caption :smile:\"\n\n+++",
+    "created" : 1508351194125.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "852924851",
+    "id" : "2063EF",
+    "lastKnownWriteTime" : 1508351426,
+    "last_content_update" : 1508351426056,
+    "path" : "C:/Users/haotm/Desktop/Ming_blog/content/project/2017-10-19-linux-from-scratch.md",
+    "project_path" : "content/project/2017-10-19-linux-from-scratch.md",
+    "properties" : {
+    },
+    "relative_order" : 13,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "markdown"
+}
