@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "+++\n# Contact widget.\n\ndate = \"2016-04-20T00:00:00\"\ndraft = false\n\ntitle = \"Contact\"\nsubtitle = \"\"\nwidget = \"contact\"\n\n# Order that this section will appear in.\nweight = 70\n\n# Automatically link email and phone?\nautolink = true\n\n+++\n\n",
+    "created" : 1508336921757.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2900963090",
+    "id" : "8A90ABC3",
+    "lastKnownWriteTime" : 1508251905,
+    "last_content_update" : 1508251905,
+    "path" : "C:/Users/haotm/Desktop/Ming_blog/content/home/contact.md",
+    "project_path" : "content/home/contact.md",
+    "properties" : {
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "markdown"
+}
