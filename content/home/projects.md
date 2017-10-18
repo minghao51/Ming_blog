@@ -29,13 +29,26 @@ filter_default = 0
   name = "All"
   tag = "*"
   
-[[filter]]
-  name = "Deep Learning"
-  tag = ".deep-learning"
+# [[filter]]
+#   name = "Deep Learning"
+#   tag = ".deep-learning"
 
+# [[filter]]
+#   name = "Other"
+#   tag = ".demo"
+
+[[filter]]
+  name = "Current"
+  tag = ".current"
+  
+  
+[[filter]]
+  name = "Archieve"
+  tag = ".Archieve"
+  
+  
 [[filter]]
   name = "Other"
-  tag = ".demo"
-
+  tag = ".Other"
 +++
 
