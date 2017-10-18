@@ -27,3 +27,7 @@ image = "headers/bubbles-wide.jpg"
 caption = "My caption :smile:"
 
 +++
+
+The guide can be found at http://www.linuxfromscratch.org/
+I decided to dual boot ubuntu along my windows 10, and proceed with it.
+
