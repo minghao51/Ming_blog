@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "---\ntitle: Hello world post\nauthor: MingHao\ndate: '2017-10-17'\nslug: Hello-world post\ncategories:\n  - R\ntags: []\n---\n\nI have finally decided to try my hands on blogging again, only this round with markdown with rstudio. This blog will also serve as a means to keep track and records of various small projects and interest i have done so far. \n\nI will start with posting previously achieved projects. I should be able to update it rather frequently since I'm pretty free these days.",
+    "created" : 1508345794866.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4175454351",
+    "id" : "40D0F613",
+    "lastKnownWriteTime" : 1508346486,
+    "last_content_update" : 1508346486179,
+    "path" : "C:/Users/haotm/Desktop/Ming_blog/content/post/2017-10-17-just-another-post.Rmd",
+    "project_path" : "content/post/2017-10-17-just-another-post.Rmd",
+    "properties" : {
+    },
+    "relative_order" : 10,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
