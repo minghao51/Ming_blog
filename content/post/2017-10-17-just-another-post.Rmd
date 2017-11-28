@@ -6,6 +6,15 @@ slug: Hello-world post
 categories:
   - R
 tags: []
+output: 
+  html_document:
+    toc: true
+    toc_depth: 2
+    toc_float: 
+      collapsed: false
+    df_print: paged
+    number_sections: true
+    results: hold
 ---
 
 I have finally decided to try my hands on blogging again, only this round with markdown with rstudio. This blog will also serve as a means to keep track and records of various small projects and interest i have done so far. 
