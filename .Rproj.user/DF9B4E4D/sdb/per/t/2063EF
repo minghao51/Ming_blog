@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "+++\n# Date this page was created.\ndate = \"2016-04-27\"\n\n# Project title.\ntitle = \"Linux from scratch\"\n\n# Project summary to display on homepage.\nsummary = \"Documenting and going through guides on LFS (Linux from scratch)\"\n\n# Optional image to display on homepage (relative to `static/img/` folder).\nimage_preview = \"bubbles.jpg\"\n\n# Tags: can be used for filtering projects.\n# Example: `tags = [\"machine-learning\", \"deep-learning\"]`\ntags = [\"current\"]\n\n# Optional external URL for project (replaces project detail page).\nexternal_link = \"\"\n\n# Does the project detail page use math formatting?\nmath = false\n\n# Optional featured image (relative to `static/img/` folder).\n[header]\nimage = \"headers/bubbles-wide.jpg\"\ncaption = \"My caption :smile:\"\n\n+++\n\nThe guide can be found at http://www.linuxfromscratch.org/\nI decided to dual boot ubuntu along my windows 10, and proceed with it.\n\n",
+    "created" : 1508351194125.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1350396212",
+    "id" : "2063EF",
+    "lastKnownWriteTime" : 1508354226,
+    "last_content_update" : 1508354226349,
+    "path" : "C:/Users/haotm/Desktop/Ming_blog/content/project/2017-10-19-linux-from-scratch.md",
+    "project_path" : "content/project/2017-10-19-linux-from-scratch.md",
+    "properties" : {
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "markdown"
+}

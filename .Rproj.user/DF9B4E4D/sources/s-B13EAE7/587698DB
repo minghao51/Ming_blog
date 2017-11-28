@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "+++\n# About/Biography widget.\n\ndate = \"2017-10-18T00:00:00\"\ndraft = false\n\nwidget = \"about\"\n\n# Order that this section will appear in.\nweight = 5\n\n# List your academic interests.\n[interests]\n  interests = [\n    \"Physics\",\n    \"Statistics\",\n    \"Information Retrieval\"\n  ]\n\n# List your qualifications (such as academic degrees).\n\n[[education.courses]]\n  course = \"Masters in Medical Physics\"\n  institution = \"University of Sydney\"\n  year = 2014\n\n[[education.courses]]\n  course = \"BSc in Physics and Chemistry\"\n  institution = \"Australian National Unversity\"\n  year = 2012\n \n+++\n\n# Biography\n\nMing Hao\n\nExperienced in working both as a clinical physicist in diagnostic setting and as an application specialist for oncology products which include Elekta Linacs and Tomotherapy.\n",
+    "created" : 1508337690645.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "301041342",
+    "id" : "587698DB",
+    "lastKnownWriteTime" : 1508350361,
+    "last_content_update" : 1508350361956,
+    "path" : "C:/Users/haotm/Desktop/Ming_blog/content/home/about.md",
+    "project_path" : "content/home/about.md",
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "markdown"
+}
