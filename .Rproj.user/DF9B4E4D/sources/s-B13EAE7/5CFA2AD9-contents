@@ -600,28 +600,28 @@ vis_edge_d3$i.id<-NULL
 colnames(vis_edge_d3)[1]<- "from"
 colnames(vis_edge_d3)[2]<- "to"
 
-forceNetwork(Links = vis_edge_d3, Nodes = vis_node,
-             # plotting parameters
-             Source="from", Target="to", Value = "width",
-             Group = "color.background", NodeID="countries",
-             # Nodesize=6,
-             opacity = 0.8,
-             opacityNoHover = 0.4,
-             radiusCalculation = JS(" d.nodesize^2+10"),
-             linkColour = "#afafaf",
-             linkWidth = JS("function(d) { return Math.sqrt(d.value); }"),
-
-             # layout
-             charge = -250,  # if highly negative, more space betqeen nodes
-
-             # general parameters
-             arrows=TRUE,
-             fontSize=17,
-             zoom = TRUE,
-             legend=F,
-             width = NULL,
-             height = NULL
-)
+# forceNetwork(Links = vis_edge_d3, Nodes = vis_node,
+#              # plotting parameters
+#              Source="from", Target="to", Value = "width",
+#              Group = "color.background", NodeID="countries",
+#              # Nodesize=6,
+#              opacity = 0.8,
+#              opacityNoHover = 0.4,
+#              radiusCalculation = JS(" d.nodesize^2+10"),
+#              linkColour = "#afafaf",
+#              linkWidth = JS("function(d) { return Math.sqrt(d.value); }"),
+# 
+#              # layout
+#              charge = -250,  # if highly negative, more space betqeen nodes
+# 
+#              # general parameters
+#              arrows=TRUE,
+#              fontSize=17,
+#              zoom = TRUE,
+#              legend=F,
+#              width = NULL,
+#              height = NULL
+# )
 
 
 ```
