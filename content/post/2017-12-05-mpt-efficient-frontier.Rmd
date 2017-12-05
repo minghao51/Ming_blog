@@ -31,7 +31,7 @@ Among which the *Standard Deviation *and *SharpeRatio* will be calculated in the
 
 MPT suggested that it is possible to construct an "efficient frontier" of an optimal portfolio, whereby it is possible to calculate the maximum possible expected return for a given level of risk, this is done through diversification.
 
-Through R packages such as **quantmod**, **PortfolioAnalytics** and **PerformanceAnalytics**, Stocks, Bounds and index data can be pulled for internet. Then, it can be analyzed and used to construct a custom portfolio that is tailored to specific cost and objectives.  The sections below show the process of calculating the Efficient Frontier.
+Through R packages such as **quantmod**, **PortfolioAnalytics** and **PerformanceAnalytics**, Stocks, Bounds and index data can be pulled from internet. Then, it can be analyzed and used to construct a custom portfolio that is tailored to specific cost and objectives.  The sections below show the process of calculating the Efficient Frontier.
 # Packages used
 
 ```{r setup, warning = F, message=F}
