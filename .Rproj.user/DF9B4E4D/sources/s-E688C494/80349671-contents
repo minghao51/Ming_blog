@@ -1,0 +1,293 @@
+---
+title: 'MPT &  other measurements '
+author: MingHao
+date: '2017-12-05'
+slug: mpt-other-measurements
+categories: []
+tags:
+  - Regression
+  - quantmod
+  - PortfolioAnalytics
+  - PerformanceAnalytics
+  - timeseries
+header:
+  caption: ''
+  image: ''
+---
+
+#[Modern Portfolio Theory (MPT)](https://www.investopedia.com/walkthrough/fund-guide/introduction/1/modern-portfolio-theory-mpt.aspx#ixzz50Mf3HHix )
+
+# Introduction
+The explanations are mostly adapted from investopedia. On the technical side, there are five statistical risk measurements used in modern portfolio theory (MPT); 
+ 
+1. *alpha*
+2. *beta*
+3. *R-squared* 
+4. *standard deviation*
+5. *Sharpe ratio*. 
+
+the former 3 statistical risk measurements used in modern portfolio theory (MPT) will be calculated below, the other 2 will be used in constructing an Efficient Frontier portfolio in another post. 
+
+#Packages load
+```{r setup, warning = F, message=F}
+require(PortfolioAnalytics)
+require(PerformanceAnalytics)
+
+require(quantmod)
+require(zoo)
+require(plotly)
+require(data.table)
+
+require(DT)
+## for optimisation
+# library(DEoptim)
+# library(ROI)
+# require(ROI.plugin.quadprog)
+# require(ROI.plugin.glpk)
+
+knitr::opts_chunk$set(results = 'hold', echo = T)
+```
+
+#  Data Inputs
+The inputs column's indexes, Risk-free bounds, main investments interest and its peers are defined here.
+
+```{r}
+#Defining inputs
+# Symbols <- c("^GSPC","XOM","MSFT","JNJ","GE", "^TNX")
+Symbols <- c( "^GSPC", "MSFT", "GOOGL", "AAPL",  "AMZN", "FB","^HSI", "^STI", "^TNX")
+
+Returnsxts.col = 1 #Defining main invest
+# GSPC/ S&P
+Returnsxtspeers.cols = c(2,3,4,5,6,7,8) #Defining peers
+#the 5 biggest tech stocks
+Returnsxtsindexes.cols = 1  #Defining index
+# GSPC/ S&P
+Returnsxts.Rf.col = 9  #Defining riskfree invest
+# CBOE Interest Rate 10 Year T No (^TNX)
+
+Symbols
+```
+
+# Pulling info and assignment
+
+This section pulls the data, computes its monthly return and assign them appropriately.
+
+```{r}
+
+# create environment to load data into
+Data <- new.env()
+getSymbols(Symbols, from="2007-01-01", env=Data)
+
+
+# calculate returns, merge, and create data.frame (eapply loops over all
+# objects in an environment, applies a function, and returns a list)
+R
+ReturnsMonthly <- eapply(Data, function(s) monthlyReturn(Ad(s)))
+Returnsxts <- do.call(merge.xts, ReturnsMonthly)
+Returnsxts<- na.omit(Returnsxts)
+
+# adjust column names as Symbols
+colnames(Returnsxts)<- Symbols
+
+## Depreciated
+# ReturnsROC <- eapply(Data, function(s) ROC(Ad(s), type="discrete"))
+# ReturnsROC <- eapply(Data, function(s) ROC(Ad(s), n=21))
+
+# ReturnsDF <- as.data.frame(do.call(merge.xts, ReturnsMonthly))
+# colnames(ReturnsDF)<- Symbols
+
+
+##  Defining trailing months
+# Often, only recents data hold more signifincat, 
+# hence, the return data can be filtered to only include a matter of 12 and 36 months worth of data in this case.
+
+
+#This section define additional trailing parameter
+Returnsxts.length = dim(Returnsxts)[1]
+# colnames(Returnsxts)
+Rxtstrailing12.rows = ((Returnsxts.length - 11):Returnsxts.length)
+Rxtstrailing36.rows = ((Returnsxts.length - 35):Returnsxts.length)
+```
+
+# Computing Beta, Alpha manually in R
+
+#### Alpha
+Alpha is used in finance as a measure of performance. Alpha, often considered the active return on an investment, gauges the performance of an investment against a market index or benchmark which is considered to represent the market’s movement as a whole. The excess return of an investment relative to the return of a benchmark index is the investment’s alpha.
+
+#### Beta
+Beta is a measure of the volatility, or systematic risk, of a security or a portfolio in comparison to the market as a whole. Beta is used in the capital asset pricing model (CAPM), which calculates the expected return of an asset based on its beta and expected market returns. Beta is also known as the beta coefficient.
+
+
+Following the CAPM formula listed on investopedia,
+The expected return of an asset given its risk is:
+
+$$r =  r_f + \beta_a (r_f - r_f)$$ 
+ 
+ Where,
+ 
+* $r_F$ risk free rate
+ 
+* $r_m$ return of the index/market
+  
+* $r_a$ expected return of an asset given its risk i
+ 
+* $\beta_a$ Beta of a security/stocks
+ 
+ Mathematically speaking, Alpha is the rate of return that exceeds a financial expectation. We will use the CAPM formula 
+ 
+ 
+$$r-r_f = \beta * (r_m – r_f )  +  \alpha$$ 
+
+
+```{r}
+#organising the returns by Y and X terms
+Y_r <- Returnsxts[, Returnsxtsindexes.cols]- Returnsxts[, Returnsxts.Rf.col]
+X_r <- Returnsxts[, Returnsxtspeers.cols]- as.numeric(Returnsxts[, Returnsxts.Rf.col])
+
+#apply lm through different stocks in X_r
+lmtable_coef<-data.frame(t(apply(X_r, 2, function(x.col) 
+  lm(Y_r~x.col )$coef)))
+
+lmtable_rsq<-data.frame((apply(X_r, 2, function(x.col) 
+  summary(lm(Y_r~x.col ))$r.squared)))
+
+#combining the result
+lmtable<- cbind(lmtable_coef, lmtable_rsq)
+
+#cleaning up the table
+colnames(lmtable)<-c("Alpha", "Beta", "R-square")
+lmtable$Alpha<- round(lmtable$Alpha,3)
+lmtable$Beta<- round(lmtable$Beta,3)
+lmtable$"R-square"<- round(lmtable$"R-square",3)
+
+#printing the table
+datatable(lmtable)
+```
+
+
+
+Other basic plots built in within **PortfolioAnalytics** and **PerformanceAnalytics**
+
+# Basics Histogram plots
+
+Basics Histogram plots are used to verify the distribution, such as how well0 normal distribution describe it and such. Below are plots of **index** (^GSPC) here
+
+
+```{r}
+layout(rbind(c(1,2),c(3,4)))
+chart.Histogram(Returnsxts[,1,drop=F], main = "Plain", methods = NULL)
+chart.Histogram(Returnsxts[,1,drop=F], main = "Density", breaks=40,
+                methods = c("add.density", "add.normal"))
+chart.Histogram(Returnsxts[,1,drop=F], main = "Skew and Kurt", methods = c("add.centered", "add.rug"))
+chart.Histogram(Returnsxts[,1,drop=F], main = "Risk Measures", methods = c("add.risk"))
+par(mfrow=c(1,1))
+
+```
+
+# Relative return and risk
+
+```{r}
+# Plot of Return
+chart.Boxplot(Returnsxts[Rxtstrailing36.rows, c(Returnsxts.col, Returnsxtspeers.cols)])
+```
+
+# RiskReturn Plot
+The plot of the Annualized Return and Risk of various Stocks and index
+```{r}
+# Plot of RiskReturnScatter
+chart.RiskReturnScatter(Returnsxts[ Rxtstrailing36.rows, c(Returnsxts.col, Returnsxtspeers.cols, Returnsxtsindexes.cols)], Rf=.03/12, main = "Trailing 36-Month Performance")
+```
+
+# Rolling Performance
+ 
+```{r}
+# Examine performance consistency
+charts.RollingPerformance(Returnsxts[,c(Returnsxts.col,Returnsxtspeers.cols,Returnsxtsindexes.cols)],
+                          Rf=.03/12, colorset = c("red", rep("darkgray",3), "green"), lwd = 2)
+```
+
+# Performance Relative to a Benchmark / Relative Performance of Assets
+Time Series chart on the ratio of the cumulative performance of various stocks plots relative to index (GSPC).
+
+```{r}
+# Examine Performance Relative to a Benchmark
+chart.RelativePerformance(Returnsxts[,c(Returnsxts.col,Returnsxtspeers.cols)], Returnsxts[,c(Returnsxtsindexes.cols)], colorset = rainbow8equal, lwd = 2, legend.loc = "topleft")
+```
+
+
+```{r echo = F, message= F, warning = F}
+# ## Examine Relative Performance of Assets
+# # chart.RelativePerformance(Ra, Rb, main = "Relative Performance",
+# #   xaxis = TRUE, colorset = (1:12), legend.loc = NULL, ylog = FALSE,
+# #   elementcolor = "darkgray", lty = 1, cex.legend = 0.7, ...)
+# chart.RelativePerformance(Returnsxts[,c(Returnsxts.col),drop=F], Returnsxts[ , c(Returnsxtspeers.cols,drop=F)], colorset = tim8equal[-1], lwd = 2, legend.loc = "topleft")
+```
+
+# Rolling Regression Performance
+
+This compares the bechmark asset(red, ^GSPC) with others peer stocks (greY) via chart of performance through time.
+```{r}
+chart.Regression(Returnsxts[, c(Returnsxtspeers.cols), drop = FALSE], 
+                 Returnsxts[, Returnsxtsindexes.cols, drop = FALSE], 
+                 Rf = Returnsxts[, Returnsxts.Rf.col, drop = FALSE],
+                 excess.returns = TRUE, fit = c("loess", "linear"),
+                 legend.loc = "topleft")
+```
+
+This depicts the changes in tech stocks' Alpha, Beta  overtime with respect to the index.
+
+```{r}
+## Create a Rolling Regression
+# chart.RollingQuantileRegression(Ra, Rb, width = 12, Rf = 0,
+#   attribute = c("Beta", "Alpha", "R-Squared"), main = NULL, na.pad = TRUE,
+#   ...)
+charts.RollingRegression(Ra = Returnsxts[, c(Returnsxtspeers.cols), drop = FALSE],
+                         Rb = Returnsxts[, Returnsxtsindexes.cols, drop = FALSE], 
+                         Rf = Returnsxts[, Returnsxts.Rf.col, drop = FALSE], 
+                         colorset = redfocus, lwd = 2)
+```
+
+
+# Rolling Correlation Chart
+This depicts the changes of correlation of peers versus index overtime.
+```{r}
+# Chart the Rolling Correlation
+chart.RollingCorrelation(Returnsxts[,c(Returnsxtspeers.cols)], 
+                         Returnsxts[, Returnsxtsindexes.cols, drop = FALSE], 
+                         colorset = tim8equal, lwd = 2, main = "12-Month Rolling Correlation")
+```
+
+# Table
+
+## Tables of Returns each years
+```{r}
+#Returns a table of returns formatted with years in rows, months in columns, and a total column in the last column. For additional columns in R, annual returns will be appended as columns.
+
+datatable(data.frame(t(table.CalendarReturns(Returnsxts[,c(Returnsxts.col,Returnsxtsindexes.cols)])))
+          , options = list(pageLength = 5))
+```
+
+
+```{r}
+#Returns a basic set of statistics that match the period of the data passed in (e.g., monthly returns will get monthly statistics, daily will be daily stats, and so on)
+datatable(table.Stats(Returnsxts[,c(Returnsxts.col,Returnsxtspeers.cols)])
+          , options = list(pageLength = 5))
+```
+
+
+## Table of Performance parameter
+
+```{r}
+# Calculate Correlations
+datatable(table.Correlation(Returnsxts[, c(Returnsxts.col, Returnsxtspeers.cols)], Returnsxts[, Returnsxtsindexes.cols, drop = F], legend.loc = "lowerleft")
+          , options = list(pageLength = 5))
+
+
+datatable(table.DownsideRisk(Returnsxts[,c(Returnsxts.col, Returnsxtspeers.cols)],Rf=.03/12)
+          , options = list(pageLength = 5))
+
+datatable(table.Drawdowns(Returnsxts[,Returnsxts.col,drop=F])
+          , options = list(pageLength = 5))
+
+```
+
