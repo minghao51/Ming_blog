@@ -14,7 +14,7 @@ weight = 7
 
 +++
 
-**Physicist/ Singapore General Hospital** <div style="text-align: right"> *[Nov 2015- Present]*</div>
+**Physicist/ Singapore General Hospital**  *[Nov 2015- Present]*	
 
 - R Data analysis and research - Participated in department’s dosimetry project - Radimetrics and DRL other Radiology data. 
 - Maintaining Radiation licenses and dose readings of TLD, quality management of image/machine status.
