@@ -12,9 +12,11 @@ weight = 5
 # List your academic interests.
 [interests]
   interests = [
-    "Physics",
+    "Medical Physics",
     "Statistics",
-    "Information Retrieval"
+    "Information Retrieval",
+    "Data Science",
+    "Research"
   ]
 
 # List your qualifications (such as academic degrees).
@@ -35,4 +37,4 @@ weight = 5
 
 Ming Hao
 
-Experienced in working both as a clinical physicist in diagnostic setting and as an application specialist for oncology products which include Elekta Linacs and Tomotherapy.
+Multilingual and flexible individual, enjoy challenges and data science. Experience working in teams setting both as an applications specialist as well as a physicist.

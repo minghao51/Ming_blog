@@ -5,13 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "1055048419",
+    "hash" : "0",
     "id" : "7895C38D",
     "lastKnownWriteTime" : 1508338228,
     "last_content_update" : 1508338228811,
     "path" : "C:/Users/haotm/Desktop/Ming_blog/content/home/hero.md",
     "project_path" : "content/home/hero.md",
     "properties" : {
+        "cursorPosition" : "16,32",
+        "scrollLine" : "0"
     },
     "relative_order" : 1,
     "source_on_save" : false,
