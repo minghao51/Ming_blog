@@ -1,0 +1,5 @@
+"0","CountryIDNodes<-data.table(read.csv('CountryNodes.csv'))"
+"0","Country_id_Edges<-data.table(read.csv('CountryEdges.csv'))"
+"0","#removing rownames"
+"0","CountryIDNodes$X<-NULL"
+"0","Country_id_Edges$X<-NULL"

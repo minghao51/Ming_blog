@@ -1,0 +1,8 @@
+"0","  ## Passing layout here doesn't seem to work"
+"0","      # layout(network,"
+"0","      #     title=""Plotly Network"","
+"0","      #     shapes=edge_shapes,"
+"0","      #     xaxis=axis,"
+"0","  "
+"0","      #     yaxis=axis"
+"0","      #     )"

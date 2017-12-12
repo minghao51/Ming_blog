@@ -1,0 +1,8 @@
+"0","net <- graph.data.frame(Country_id_Edges[weight>=285, ], "
+"0","                        CountryIDNodes[id %in%"
+"0","                                           sort(unique("
+"0","                                             c("
+"0","                                               Country_id_Edges[weight>=285]$from, "
+"0","                                               Country_id_Edges[weight>=285]$to)"
+"0","                                           ))], "
+"0","                        directed = TRUE)"

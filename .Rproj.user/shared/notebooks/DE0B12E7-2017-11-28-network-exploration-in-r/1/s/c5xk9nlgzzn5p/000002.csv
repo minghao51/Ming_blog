@@ -1,0 +1,4 @@
+"0","vis_edge<-vis_edge[order(from, to)]"
+"0","# el <- data.frame(from=vis_edge$from, "
+"0","#                  to=vis_edge$to,"
+"0","#                  value = vis_edge$width)"

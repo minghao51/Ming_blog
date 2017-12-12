@@ -1,0 +1,15 @@
+"0","V(net)$community<- igraph::cluster_walktrap(net)$membership"
+"0","ggg<-ggnet2(net, node.size = sqrt(V(net)$degree)*6,"
+"0","            node.color = colorize(V(net)$community), node.label = V(net)$text,"
+"0","            edge.size = E(net)$weight, edge.color = ""grey"", label.size=2,"
+"0","            alpha = 0.5, mode = ""kamadakawai"") +"
+"0","  theme_blank()+"
+"0","  # https://github.com/ropensci/plotly/issues/842"
+"0","  theme(legend.position='none') #translate to hide legend in plotly"
+"2","ggnet2 does not know how to handle self-loops"
+"0","# mode = ""kamadakawai"""
+"0","# issue with tool tip, could not get the tool tip working in this form"
+"0","ggg %>% ggplotly(tooltip=""text"") "
+"2","We recommend that you use the dev version of ggplot2 with `ggplotly()`
+Install it with: `devtools::install_github('hadley/ggplot2')`
+"

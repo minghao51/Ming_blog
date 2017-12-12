@@ -1,0 +1,28 @@
+"0","df_net <- ggnetwork(net, layout = ""kamadakawai"")"
+"0","# possible nice layout: kamadakawai, fruchtermanreingold"
+"0","plot <- ggplot(df_net, aes(x = x, y = y, xend = xend, yend = yend),  arrow.gap = 0.025) +"
+"0","    geom_edges(alpha = 0.25, arrow = arrow(length = unit(0.5, ""lines""), type = ""closed"")) +"
+"0","    geom_nodes(aes(size = degree, color = betweenness, text=text)) +"
+"0","    ggtitle(""Network Graph of Papers flows between Countries with KK layout"") +"
+"0","    theme_blank()"
+"2","Ignoring unknown aesthetics: text"
+"0","plot %>% ggplotly(tooltip = ""text"") %>% toWebGL()"
+"2","We recommend that you use the dev version of ggplot2 with `ggplotly()`
+Install it with: `devtools::install_github('hadley/ggplot2')`
+"
+"2","'scattergl' objects don't have these attributes: 'hoveron'
+Valid attributes include:
+'type', 'visible', 'showlegend', 'legendgroup', 'opacity', 'name', 'uid', 'ids', 'customdata', 'hoverinfo', 'hoverlabel', 'stream', 'x', 'x0', 'dx', 'y', 'y0', 'dy', 'text', 'mode', 'line', 'marker', 'connectgaps', 'fill', 'fillcolor', 'error_y', 'error_x', 'xaxis', 'yaxis', 'xcalendar', 'ycalendar', 'idssrc', 'customdatasrc', 'hoverinfosrc', 'xsrc', 'ysrc', 'textsrc', 'key', 'set', 'frame', 'transforms', '_isNestedKey', '_isSimpleKey', '_isGraticule'
+"
+"2","'scattergl' objects don't have these attributes: 'hoveron'
+Valid attributes include:
+'type', 'visible', 'showlegend', 'legendgroup', 'opacity', 'name', 'uid', 'ids', 'customdata', 'hoverinfo', 'hoverlabel', 'stream', 'x', 'x0', 'dx', 'y', 'y0', 'dy', 'text', 'mode', 'line', 'marker', 'connectgaps', 'fill', 'fillcolor', 'error_y', 'error_x', 'xaxis', 'yaxis', 'xcalendar', 'ycalendar', 'idssrc', 'customdatasrc', 'hoverinfosrc', 'xsrc', 'ysrc', 'textsrc', 'key', 'set', 'frame', 'transforms', '_isNestedKey', '_isSimpleKey', '_isGraticule'
+"
+"2","'scattergl' objects don't have these attributes: 'hoveron'
+Valid attributes include:
+'type', 'visible', 'showlegend', 'legendgroup', 'opacity', 'name', 'uid', 'ids', 'customdata', 'hoverinfo', 'hoverlabel', 'stream', 'x', 'x0', 'dx', 'y', 'y0', 'dy', 'text', 'mode', 'line', 'marker', 'connectgaps', 'fill', 'fillcolor', 'error_y', 'error_x', 'xaxis', 'yaxis', 'xcalendar', 'ycalendar', 'idssrc', 'customdatasrc', 'hoverinfosrc', 'xsrc', 'ysrc', 'textsrc', 'key', 'set', 'frame', 'transforms', '_isNestedKey', '_isSimpleKey', '_isGraticule'
+"
+"2","'scattergl' objects don't have these attributes: 'hoveron'
+Valid attributes include:
+'type', 'visible', 'showlegend', 'legendgroup', 'opacity', 'name', 'uid', 'ids', 'customdata', 'hoverinfo', 'hoverlabel', 'stream', 'x', 'x0', 'dx', 'y', 'y0', 'dy', 'text', 'mode', 'line', 'marker', 'connectgaps', 'fill', 'fillcolor', 'error_y', 'error_x', 'xaxis', 'yaxis', 'xcalendar', 'ycalendar', 'idssrc', 'customdatasrc', 'hoverinfosrc', 'xsrc', 'ysrc', 'textsrc', 'key', 'set', 'frame', 'transforms', '_isNestedKey', '_isSimpleKey', '_isGraticule'
+"
