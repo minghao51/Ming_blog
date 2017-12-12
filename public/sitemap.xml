@@ -190,7 +190,7 @@
     
     <url>
     
-      <loc>/tags/finance/</loc>
+      <loc>/categories/finance/</loc>
       <lastmod>2017-12-05T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -200,7 +200,7 @@
     
     <url>
     
-      <loc>/categories/finance/</loc>
+      <loc>/tags/finance/</loc>
       <lastmod>2017-12-05T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -300,8 +300,8 @@
     
     <url>
     
-      <loc>/tags/r/</loc>
-      <lastmod>2017-11-28T00:00:00+00:00</lastmod>
+      <loc>/categories/r/</loc>
+      <lastmod>2017-12-05T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -310,8 +310,8 @@
     
     <url>
     
-      <loc>/categories/r/</loc>
-      <lastmod>2017-12-05T00:00:00+00:00</lastmod>
+      <loc>/tags/r/</loc>
+      <lastmod>2017-11-28T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
